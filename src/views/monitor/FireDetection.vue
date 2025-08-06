@@ -214,7 +214,7 @@
                     <CRow>
                       <CCol md="2">
                         <img
-                          src="C:\Users\intern.dppthinh\Desktop\webai-platform\coreui-free-vue-admin-template-main\src\assets\images\firedetection\Untitled.png"
+                          src=".\src\assets\images\firedetection\Untitled.png"
                           alt="Default"
                           class="img-fluid rounded shadow detected_img"
                           style="aspect-ratio: 4 / 3; object-fit: cover; width: 100%; max-width: 400px;"
@@ -349,7 +349,7 @@
   </CModalHeader>
   <CModalBody>
     <img
-      :src="selectedImage"
+      :src="'data:image/png;base64,' + selectedImage"
       alt="Default"
       class="img-fluid rounded shadow detected_img"
       style="aspect-ratio: 4 / 3; object-fit: cover; width: 100%;"
