@@ -83,6 +83,44 @@ body {
   }
 }
 
+.camgr-card-primary-effect {
+  border-radius: 10px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  background-color: rgba(111, 66, 193, 0.04);
+  border-left: 6px solid #5756bf;
+  border-top: 0.5px solid #5756bf;
+  border-right: 0.5px solid #5756bf;
+  border-bottom: 0.5px solid #5756bf;     
+}
+
+
 .detected_img {
   cursor: pointer;
+}
+
+.scroll-container {
+  max-height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;  
+  padding-right: 12px;         /* Thêm padding để né scroll bar */
+  padding-left: 15px; 
+  box-sizing: content-box;    
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.pagination-container {
+  position: sticky;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  background: white; /* hoặc nền bạn muốn */
+  padding: 8px;
+  z-index: 5;
+  border-top: 1px solid #ddd;
 }
