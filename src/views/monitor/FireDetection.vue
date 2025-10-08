@@ -320,7 +320,6 @@
                   </CPaginationItem>
                 </CPagination>
               </div>
-              </div>
             </CCol>
           </CRow>
         </CCardBody>
@@ -533,7 +532,7 @@ watch([selectedCameraId, currentPage], () => {
 // Fetch all cameras from API
 async function fetchCameras() {
   try {
-    const res = await axios.get('http://192.168.189.153:8000/ai/cameras?skip=0&limit=100')
+    const res = await axios.get('http://192.168.189.141:8000/ai/cameras?skip=0&limit=100')
     cameras.value = res.data
   } catch (err) {
     console.error('Failed to fetch cameras:', err)
@@ -555,7 +554,7 @@ async function fetchDetections() {
       params.camera_id = String(selectedCameraId.value)
     }
 
-    const res = await axios.get('http://192.168.189.153:8000/ai/detections', {
+    const res = await axios.get('http://192.168.189.141:8000/ai/detections', {
       params,
     })
 
@@ -571,7 +570,7 @@ async function fetchDetections() {
 // Fetch alert statistics from API
 async function fetchAlertStatistics() {
   try {
-    const res = await axios.get('http://192.168.189.153:8000/ai/alerts/statistics')
+    const res = await axios.get('http://192.168.189.141:8000/ai/alerts/statistics')
     alertStats.value = res.data
   } catch (err) {
     console.error('Failed to fetch alert statistics:', err)
@@ -583,8 +582,8 @@ async function fetchSystemStats() {
   try {
     // Parallel API calls for camera and user statistics
     const [cameraRes, userRes] = await Promise.all([
-      axios.get('http://192.168.189.153:8000/ai/cameras/summary'),
-      axios.get('http://192.168.189.153:8000/ai/users/summary'),
+      axios.get('http://192.168.189.141:8000/ai/cameras/summary'),
+      axios.get('http://192.168.189.141:8000/ai/users/summary'),
     ])
 
     // Update system statistics with API response data
@@ -603,7 +602,7 @@ async function markAsRead(item) {
     const detectionId = item.id
     // Send PATCH request to mark detection as seen
     await axios.patch(
-      `http://192.168.189.153:8000/ai/detections/${detectionId}/seen`,
+      `http://192.168.189.141:8000/ai/detections/${detectionId}/seen`,
       true,
       {
         headers: {
