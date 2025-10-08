@@ -208,25 +208,40 @@
 
             <!-- Right column: Detection list -->
             <CCol md="8">
-              <!-- Loading overlay for detections -->
-              <div style="position: relative;">
-                <div v-if="loadingDetections"
-                  style="
-                    position: absolute;
-                    inset: 0;
-                    z-index: 10;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    pointer-events: all;
-                  "
-                >
-                  <CSpinner color="primary" />
-                </div>
-              
-              <!-- Detection List Container -->
-              <div class="scroll-container m-0">
-                <!-- Loop through detections -->
+              <div class="scroll-container m-0 m-0">
+                <!-- Single alert -->
+                <CRow class="camgr-card-hover-effect py-1">
+                  <CCol md="12">
+                    <CRow>
+                      <CCol md="8">
+                        <CBadge color="warning">Dangerous Situation</CBadge>
+                        <span class="fw-bold mx-2">Thinh's Camera</span>
+                        <CBadge color="danger">New</CBadge>
+                      </CCol>
+                      <CCol md="4">
+                        <CButton color="primary" variant="outline" class="ms-auto d-block my-1">Mark Read</CButton>
+                      </CCol>
+                    </CRow>
+                    <CRow>
+                      <CCol md="2">
+                        <img
+                          src=".\src\assets\images\firedetection\Untitled.png"
+                          alt="Default"
+                          class="img-fluid rounded shadow detected_img"
+                          style="aspect-ratio: 4 / 3; object-fit: cover; width: 100%; max-width: 400px;"
+                          title="Click to view details.."
+                          @click="() => { visibleScrollingLongContentDemo = true }"
+                        />
+                      </CCol>
+                      <CCol md="10">
+                        <div class="text-muted small">2025-08-05 13:26:00</div>
+                        <a href="https://maps.google.com" target="_blank" class="text-primary fw-semibold">View on Maps</a>
+                      </CCol>
+                    </CRow>
+                  </CCol>
+                </CRow>
+                
+                <!-- Whole things -->
                 <CRow
                   v-for="(item, index) in detections"
                   :key="item.id"
