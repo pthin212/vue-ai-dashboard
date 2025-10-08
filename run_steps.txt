@@ -1,0 +1,12 @@
+1/ Set enviroment path:
+set PATH=C:\node-v22.18.0-win-x64;%PATH%
+or
+$env:PATH = "C:\node-v22.18.0-win-x64;" + $env:PATH
+
+2/ Version checking & package installing:
+node -v
+npm -v
+npm install
+
+3/ Run command:
+npm run dev

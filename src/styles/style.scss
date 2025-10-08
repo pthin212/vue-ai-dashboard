@@ -53,7 +53,7 @@ body {
 }
 
 .footer {
-  min-height: calc(3rem + 1px); // stylelint-disable-line function-disallowed-list
+  min-height: calc(3rem + 1px);
 }
 
 @include color-mode(dark) {
@@ -66,6 +66,7 @@ body {
   }
 }
 
+// Fire Detection
 .camgr-card-hover-effect {
   border-left: 6px solid transparent;
   border-top: 0.5px solid transparent;
@@ -93,7 +94,6 @@ body {
   border-bottom: 0.5px solid #5756bf;     
 }
 
-
 .detected_img {
   cursor: pointer;
 }
@@ -102,7 +102,7 @@ body {
   max-height: 500px;
   overflow-y: auto;
   overflow-x: hidden;  
-  padding-right: 12px;         /* Thêm padding để né scroll bar */
+  padding-right: 12px;
   padding-left: 15px; 
   box-sizing: content-box;    
   scrollbar-width: thin;
@@ -113,14 +113,18 @@ body {
   background: transparent;
 }
 
-.pagination-container {
-  position: sticky;
-  bottom: 0;
-  right: 0;
-  display: flex;
-  justify-content: flex-end;
-  background: white; /* hoặc nền bạn muốn */
-  padding: 8px;
-  z-index: 5;
-  border-top: 1px solid #ddd;
+.badge-rect {
+  background-color: #f8d7da;
+  color: #721c24;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-block;
+  min-width: 30px;
+  text-align: center;
+}
+
+.c-pagination .page-item {
+  cursor: pointer;
 }
